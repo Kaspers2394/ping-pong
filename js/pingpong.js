@@ -5,7 +5,6 @@ var width = 450, height = 300
 var draw = SVG('pong').size(width, height)
 draw.viewbox(0,0,450,300)
 
-
 // draw background
 var background = draw.rect(width, height).fill('#dde3e1')
 
