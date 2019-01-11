@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 92.1 115.5" style="enable-background:new 0 0 92.1 115.5;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#777575;stroke:#FFFFFF;stroke-width:8;stroke-miterlimit:10;}
+	.st1{fill:#777575;stroke:#ABABAA;stroke-width:4;stroke-miterlimit:10;}
+	.st2{fill:#B7B7B7;stroke:#FFFFFF;stroke-width:2;stroke-miterlimit:10;}
+	.st3{fill:#DFC638;stroke:#FFFFFF;stroke-width:2;stroke-miterlimit:10;}
+	.st4{fill:#878787;stroke:#FFFFFF;stroke-width:2;stroke-miterlimit:10;}
+	.st5{fill:none;stroke:#FFFFFF;stroke-miterlimit:10;}
+	.st6{fill:#B7B7B7;stroke:#FFFFFF;stroke-width:3;stroke-miterlimit:10;}
+</style>
+<g id="bombe">
+	<g>
+		<circle class="st0" cx="36.5" cy="79" r="32.5"/>
+		<circle class="st1" cx="36.7" cy="78.7" r="30.8"/>
+	</g>
+	<g>
+		<path class="st2" d="M69.6,46.3c-0.8,1.5-6.2,0.2-12.1-3c-5.9-3.2-10.2-6.9-9.4-8.5c0.8-1.5,6.4-0.2,12.3,3
+			C66.3,41,70.4,44.8,69.6,46.3z"/>
+		<path class="st3" d="M70,18c0,0,6.8,20.4,6.8,20.1c0.1-0.4,0.7-18,0.7-18l11.4-0.5l-8.8-5.6l4.8-9.2l-8.7,5.2l-9.5-7.4l1.8,8.8
+			l-11.8,4.5L70,18z"/>
+		<g>
+			<path class="st4" d="M70.9,22.8c0,0-5.7,0.9-6,4.1c0,0-0.8,2,0.3,4.6s-0.8,6-4.2,9c0,0-4.4,0.1-3.1-3.5c0,0,2.5-3.2,2.9-4.9
+				c0.4-1.7-2.3-5.7,1.4-9c2-1.8,3.7-2.9,4.8-3.6c0.9-0.5,1.4-0.7,1.4-0.7l1.6,0.1L70.9,22.8z"/>
+			<line class="st5" x1="69" y1="23" x2="67.2" y2="19.1"/>
+			<line class="st5" x1="66.9" y1="24.3" x2="64.7" y2="20.9"/>
+			<line class="st5" x1="65" y1="26.2" x2="62.3" y2="22.8"/>
+			<line class="st5" x1="64.6" y1="29.7" x2="60.4" y2="25.9"/>
+			<line class="st5" x1="64.7" y1="35.2" x2="60.4" y2="29.9"/>
+			<line class="st5" x1="62.6" y1="38.8" x2="59.6" y2="34.3"/>
+		</g>
+		<path class="st6" d="M47.2,38.2l-4.5,8.5c0,0,5.8,8.8,18.5,10.5l6-8.9C67.2,48.3,52.6,45.1,47.2,38.2z"/>
+	</g>
+</g>
+</svg>
