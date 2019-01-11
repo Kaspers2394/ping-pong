@@ -27,7 +27,8 @@
 							begin=".1"
 							dur="0.4s"
 							values="0,2;0,-2;0,2"
-							repeatCount="indefinite" /> </g>
+							repeatCount="indefinite" />
+                     </g>
 
 <g>
 <ellipse class="st1" cx="335.7" cy="398.5" rx="74.5" ry="77"/>
