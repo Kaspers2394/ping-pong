@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="utf-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <title>Page Title</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" type="text/css" media="screen" href="css.css" />
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js"></script>
+   <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700" rel="stylesheet">
+
+</head>
+
+<body>
+   <div id="scene">
+      <span class="sing" id="s1">T</span>
+      <span class="sing" id="s2">h</span>
+      <span class="sing" id="s3">e</span>
+      <span class="sing" id="s4">P</span>
+      <span class="sing" id="s5">i</span>
+      <span class="sing" id="s6">n</span>
+      <span class="sing" id="s7">g</span>
+      <span class="sing" id="s8">P</span>
+      <span class="sing" id="s9">o</span>
+      <span class="sing" id="s10">n</span>
+      <span class="sing" id="s11">g</span>
+      <div id="boxet">
+         <button id="start" class="play"><a class="playlink" href="src/index.html">Play the</a></button>
+      </div>
+      <div id="game">GAME</div>
+
+      <!-- SVG -->
+      <?xml version="1.0" encoding="utf-8"?>
+      <svg version="1.1" id="rocket" xmlns="http://www.w3.org/2000/svg" height="50%" viewBox="0 0 841.7 430.4"
+         xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve">
+         <g>
+            <path class="start0" d="M613.6,186.7c0,0,26.8-11.7,46.8-14.4c0,0-20.2-30.4-74.5-18.8C585.9,153.5,604.2,165.7,613.6,186.7z" />
+            <path class="start0" d="M614.8,275.3c0,0,26.9,11.7,46.9,14.3c0,0-20.1,30.4-74.5,18.9C587.2,308.6,605.4,296.3,614.8,275.3z" />
+            <polygon class="start0" points="610.3,194.9 610.3,268 600.3,261.7 600.2,202.7 " />
+            <path class="start0" d="M839.7,231.3c0,0-21.9-21.6-47.4-33.2v33.2v33.2C817.9,252.9,839.7,231.3,839.7,231.3z" />
+            <path class="start0" d="M787.3,265.8v-34.9V196c-95.4-48.6-173-4.1-173-4.1V231v39.1C614.3,270.2,692,314.6,787.3,265.8z M705.9,231
+               c0-13.2,10.7-24,23.9-24s24,10.7,24,23.9s-10.7,24-23.9,24S706,244.2,705.9,231z" />
+         </g>
+         <g>
+            <ellipse id="bigLast" class="start1" cx="350.1" cy="212.7" rx="29.8" ry="30.8" />
+         </g>
+
+         <g>
+            <ellipse id="middleLast" class="start1" cx="338.6" cy="184.5" rx="21.6" ry="22.4" />
+         </g>
+         <g>
+            <ellipse id="middleLast2" class="start1" cx="338.6" cy="184.5" rx="21.6" ry="22.4" />
+         </g>
+         <g>
+            <ellipse id="smallLast" class="start1" cx="339.5" cy="221.8" rx="14.5" ry="15" />
+         </g>
+         <g>
+            <ellipse id="smallLast2" class="start1" cx="339.5" cy="221.8" rx="14.5" ry="15" />
+         </g>
+         <g>
+            <ellipse id="smallLast3" class="start1" cx="339.5" cy="221.8" rx="14.5" ry="15" />
+         </g>
+         <g>
+            <ellipse id="topLeft" class="start1" cx="365.7" cy="160.5" rx="58.2" ry="60.2" />
+         </g>
+         <g>
+            <ellipse id="lowerLeft" class="start1" cx="336.2" cy="289" rx="58.2" ry="60.2" />
+         </g>
+         <g>
+            <ellipse id="middleLeft" class="start2" cx="362.8" cy="229.7" rx="29.8" ry="30.8" />
+            <g>
+               <polygon id="middleRight" class="start3" points="589,203.3 539.3,192.5 538.7,275 589.3,260.9 	" />
+            </g>
+            <g>
+               <ellipse id="topMiddle" class="start4" cx="426.2" cy="99.2" rx="47.9" ry="46.4" />
+            </g>
+            <g>
+               <ellipse id="lowerMiddle" class="start4" cx="399" cy="336.1" rx="52.6" ry="48.5" />
+            </g>
+            <g>
+               <circle id="topRight" class="start2" cx="489.6" cy="140.6" r="54.5" />
+            </g>
+            <g>
+               <circle id="lowerRight" class="start5" cx="480.2" cy="300.9" r="65.5" />
+            </g>
+            <g>
+               <ellipse id="middleBig" class="start6" cx="461.1" cy="228.9" rx="99.2" ry="99" />
+            </g>
+            <g>
+               <circle id="middleMiddle" class="start2" cx="488.4" cy="231.5" r="73.9" />
+            </g>
+            <g>
+               <circle id="middleSmall" class="start4" cx="503.8" cy="233.9" r="58.1" />
+            </g>
+      </svg>
+
+      <div id="btns">
+         <button class="btn" onclick="master.play()">start</button>
+         <button class="btn" onclick="start()">start scale</button>
+         <button class="btn" onclick="master.pause()">pause</button>
+         <button class="btn" onclick="master.timeScale(1)">1</button>
+         <button class="btn" onclick="master.timeScale(0.5)">0.5</button>
+         <button class="btn" onclick="master.timeScale(0.1)">0.1</button>
+         <button class="btn" onclick="master.restart()">restart</button>
+         <button id="replay">Replay</button>
+      </div>
+
+   </div>
+
+<script src="animation.js"></script>
+</body>
+
+</html>
