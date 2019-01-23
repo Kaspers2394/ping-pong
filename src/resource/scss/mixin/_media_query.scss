@@ -1,0 +1,51 @@
+$minimum_screen: 480;
+$maximum_screen: 1200;
+
+
+@mixin bp($point) {
+
+  $bp-large: "screen and (min-width:  1600px)";
+  $bp-large-ls: "screen and (min-width:  1600px) and (orientation: landscape)";
+
+  $bp-medium: "screen and (min-width: 1100px)";
+  $bp-medium-ls: "screen and (min-width: 1100px) and (orientation: landscape)";
+
+  $bp-small: "screen and (min-width: 600px)";
+  $bp-small-ls: "screen and (min-width: 600px) and (orientation: landscape)";
+
+
+  $bp-x-small: "screen and (min-width: 480px)";
+    $bp-x-small-ls: "screen and (min-width: 480px) and (orientation: landscape)";
+
+
+
+
+  @if $point == large {
+    @media #{$bp-large} { @content; }
+    }
+  @else if $point == large-ls {
+    @media #{$bp-large-ls}  { @content; }
+  }
+
+  @else if $point == medium {
+    @media #{$bp-medium} { @content; }
+  }
+  @else if $point == medium-ls {
+    @media #{$bp-medium-ls} { @content; }
+  }
+
+    @else if $point == small {
+      @media #{$bp-small}  { @content; }
+    }
+    @else if $point == small-ls {
+      @media #{$bp-small-ls}  { @content; }
+    }
+
+    @else if $point == x-small {
+        @media #{$bp-x-small}  { @content; }
+      }
+  @else if $point == x-small-ls {
+    @media #{$bp-x-small-ls}  { @content; }
+  }
+
+  }

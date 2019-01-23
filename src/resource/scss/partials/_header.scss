@@ -1,0 +1,98 @@
+@import '../mixin/media_query';
+.flag {
+
+position:fixed;
+height: 50px;
+
+
+
+
+
+
+  @include bp(small) {
+    left: 0;
+    top: 0;
+
+    display:block;
+    background-color: #fff;
+    z-index: 1000;
+
+  }
+
+  @include bp(large) {
+    top: 1vh;
+    left: 0;
+
+    display:inline-block;
+    background-color: rgba(0,0,0,0);
+  }
+
+    li{
+
+
+
+      @include bp(small) {
+
+width: 50px;
+display:inline-block;
+
+      }
+
+      @include bp(large) {
+        width: 50px;
+
+        display:inline-block;
+      }
+
+
+
+img{
+
+  @include bp(small) {
+    width: 50px;
+
+  }
+
+  @include bp(small-ls) {
+    width: 30px;
+
+  }
+
+  @include bp(medium) {
+    width: 40px;
+  }
+
+
+  @include bp(large) {
+    width: 40px;
+  }
+
+  margin: 1vh;
+}
+
+a{
+
+    cursor: pointer;
+}
+
+}
+
+}
+
+#title{
+
+  text-align: center;
+}
+
+#pricetitle{
+
+  text-align: center;
+  @include bp(small) {
+    display:none;
+  }
+  @include bp(large) {
+    display:block;
+  }
+}
+
+

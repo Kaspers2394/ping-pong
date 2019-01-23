@@ -1,0 +1,42 @@
+@import '../mixin/fluid_topography';
+@import '../mixin/color_theme';
+
+@import '../mixin/media_query';
+*{
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+
+
+
+
+
+
+body {
+
+  position: relative;
+
+
+  canvas {
+    margin-top: 0;
+    margin-left: 0;
+
+    outline: 1px solid white;
+  }
+
+
+}
+
+
+
+
+
+.center{
+
+  text-align: center ;
+}
