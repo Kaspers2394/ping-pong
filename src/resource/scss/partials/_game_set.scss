@@ -1,106 +1,91 @@
 @font-face {
-  font-family: myFont;
-  src: url(../font/digital-7.ttf);
+   font-family: myFont;
+   src: url(../font/digital-7.ttf);
 }
 
-*{
-padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+* {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
 }
 
-#gameboard{
+#gameboard {
+   position: relative;
 
-  position: relative;
-
-
-  #scoreboard{
-
-
-
-    width: 100%;
-    background-color: #333;
-    display: grid;
-    grid-template-columns: repeat(3,  calc((100%)/3));
-
-
-
-
-
-    input[type="button"], button{
-      padding: 5px;
+   #scoreboard {
       width: 100%;
-      margin: 0 auto;
-      font-size: 40px;
-      border-radius: 10px;
-    }
+      background-color: #333;
+      display: grid;
+      grid-template-columns: repeat(3, calc((100%)/3));
 
-  }
-
-
-}
-#score1, #score2, input[type="text"] {
-
-  font-family: myFont;
-  font-size: 35px;
-  padding: 20px 0;
-  text-align: center;
-  width: 100%;
-  border: 0;
-
+      input[type="button"],
+      button {
+         padding: 5px;
+         width: 100%;
+         margin: 0 auto;
+         font-size: 40px;
+         border-radius: 10px;
+      }
+   }
 }
 
-#score1, #score2{
+#score1,
+#score2,
+input[type="text"] {
+   font-family: myFont;
+   font-size: 35px;
+   padding: 20px 0;
+   text-align: center;
+   width: 100%;
+   border: 0;
+}
 
-  background: rgb(82, 83, 85);
-  font-size: 45px;
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-    -khtml-user-select: none; /* Konqueror HTML */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* Internet Explorer/Edge */
-    user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome and Opera */
-  }
+#score1,
+#score2 {
+   background: rgb(82, 83, 85);
+   font-size: 45px;
+   -webkit-touch-callout: none;
+   /* iOS Safari */
+   -webkit-user-select: none;
+   /* Safari */
+   -khtml-user-select: none;
+   /* Konqueror HTML */
+   -moz-user-select: none;
+   /* Firefox */
+   -ms-user-select: none;
+   /* Internet Explorer/Edge */
+   user-select: none;
+   /* Non-prefixed version, currently
+   supported by Chrome and Opera */
+}
 
+.figure_container {
+   display: grid;
+   grid-template-columns: repeat(2, calc((100%)/2));
+   padding: 0;
+   margin: 0;
 
-.figure_container{
-display: grid;
-grid-template-columns: repeat(2,  calc((100%)/2));
-
-
-    padding: 0;
-    margin: 0;
-
-
-    img{
-display: block;
+   img {
+      display: block;
       cursor: pointer;
-
-  }
-
+   }
 }
 
 .icon_container {
-  display: grid;
-  grid-template-columns: repeat(4, calc((100%) / 4));
+   display: grid;
+   grid-template-columns: repeat(4, calc((100%) / 4));
 
-
-
-  img{
-    display: block;
-    cursor: pointer;
-    width:100%;
-
-  }
+   img {
+      display: block;
+      cursor: pointer;
+      width: 100%;
+   }
 }
 
-.faded{
-
-  opacity: 0.2;
+.faded {
+   opacity: 0.2;
 }
 
-.unfaded{
-
-  opacity: 1;
+.unfaded {
+   opacity: 1;
 }

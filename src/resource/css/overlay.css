@@ -1,0 +1,41 @@
+img {
+   width: 100%;
+}
+#scoreboard {
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: grey;
+display: grid;
+grid-template-columns: 1fr 1fr;
+}
+#gamestart {
+   grid-column: 1 / 3;
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.maps_container, .balls_container {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+}
+.player_container {
+   grid-column: 1 / -1;
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   align-items: center;
+}
+.player1 {
+   grid-column: 1 / 2;
+}
+.player2 {
+   grid-column: span 1 / -1;
+}
+.player_icons {
+display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+grid-gap: 2vw;
+justify-content: center;
+align-items: center;
+}

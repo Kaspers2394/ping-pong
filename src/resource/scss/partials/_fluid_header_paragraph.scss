@@ -1,18 +1,15 @@
 @import '../mixin/fluid_topography';
 @import '../mixin/color_theme';
 
-
 a{
 	@include fluid-type(1.8vh, 2.2vh);
 	font-weight: normal;
-
 	margin: 1vh  0;
 }
 
 p {
 	@include fluid-type(1.8vh, 2.8vh);
 	font-weight: normal;
-
 	margin: 2vh  0;
 }
 
@@ -24,13 +21,11 @@ h1 {
 
 
 h2 a {
-
 	text-decoration: none;
 	@include fluid-type(1.8vh, 5vh);
 	font-weight: 500;
 	margin: 4vh 0;
 	color: rgba(map-get($color-index, Dark_font),1);
-
 }
 
 .index_header  {
@@ -46,33 +41,23 @@ h2 a {
 	&:nth-last-child(2){
 		border: 0;
 	}
-
-
-
-
 }
 .index_header:first-child {
 	margin-top: 3vh;
 }
 
-
-
-
 h2 {
-
 	@include fluid-type(1.8vh, 3vh);
 	font-weight: 600;
-
 	//color: rgba(map-get($color-index, Active),1);
 	padding: 10px;
-
  }
 
 
 h3{
 	@include fluid-type(2.0vh, 2.5vh);
 	font-weight: normal;
-padding: 10px 0;
+   padding: 10px 0;
 	color: rgba(map-get($color-index, Dark_font),1);
 }
 
