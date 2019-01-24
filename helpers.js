@@ -1,3 +1,8 @@
+//restart animation on window resize
+window.addEventListener('resize', function(event){
+   master.restart()
+   });
+
 // ViewWidth to pixels converter
 vwToPx = (vw) => {
    var vw = Math.floor((document.getElementById('scene').offsetWidth / 100) * vw);
