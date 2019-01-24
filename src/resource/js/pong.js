@@ -4,8 +4,10 @@ let ball;
 let point1 = 0;
 let point2 = 0;
 let board_height = window.innerHeight;
-let hockey_margin = 20;
+let hockey_margin = 40;
 
+let gameboard_width = 1200 //window.innergameboard_width;
+let gameboard_height = gameboard_width * ((8/15)) //window.innerHeight;
 
 //define icon1 width
 let hockey_left_width = '';
@@ -134,8 +136,8 @@ function startGame() {
 
 
     myGameArea.start();
-    hockey1 = new component(parseInt(hockey_left_width), parseInt(hockey_left_height), hockey_margin, board_height / 2, "img", player1_icon, 'lefthand', 'player1_icon_width', 'player1_icon_height', 'player1_icon');
-    hockey2 = new component(parseInt(hockey_right_width), parseInt(hockey_right_height), 700 - hockey_right_width - hockey_margin, board_height / 2, "img", player2_icon, 'righthand', 'player2_icon_width', 'player2_icon_height', 'player2_icon');
+    hockey1 = new component(parseInt(hockey_left_width), parseInt(hockey_left_height), hockey_margin, gameboard_height / 2, "img", player1_icon, 'lefthand', 'player1_icon_width', 'player1_icon_height', 'player1_icon');
+    hockey2 = new component(parseInt(hockey_right_width), parseInt(hockey_right_height), gameboard_width - hockey_right_width - hockey_margin, gameboard_height / 2, "img", player2_icon, 'righthand', 'player2_icon_width', 'player2_icon_height', 'player2_icon');
     ball = new component(40, 40, 350, 170, "img", balls, 'balls', '', '', 'balls');
 
 
@@ -147,17 +149,16 @@ let myGameArea = {
     ,
     start: function () {
 
-        let height = 370 //window.innerHeight;
-        let width = 700 //window.innerWidth;
+
         this.canvas.setAttribute("style", "background-image:url(" + background + "); background-size:100%;");
 
-        this.canvas.width = width;
-        this.canvas.height = height;
+        this.canvas.width = gameboard_width;
+        this.canvas.height = gameboard_height;
         this.context = this.canvas.getContext("2d");
         let gameboard = document.getElementById("gameboard");
-        gameboard.setAttribute("style", "height:" + height);
+        gameboard.setAttribute("style", "height:" + gameboard_height);
         let scoreboard = document.getElementById("scoreboard");
-        scoreboard.setAttribute("style", "width:" + width + "px");
+        scoreboard.setAttribute("style", "width:" + gameboard_width + "px");
         gameboard.insertBefore(this.canvas, gameboard.childNodes[0]);
         this.interval = setInterval(updateGameArea, 30);
 
@@ -170,10 +171,10 @@ let myGameArea = {
         window.addEventListener('keydown', function (e) {
             myGameArea.keys = (myGameArea.keys || []);
             myGameArea.keys[e.keyCode] = true;
-        })
+        });
         window.addEventListener('keyup', function (e) {
             myGameArea.keys[e.keyCode] = false;
-        })
+        });
     },
 
     clear: function () {
@@ -275,14 +276,14 @@ function updateGameArea() {
     if (hockey1.y <= 0) {
         hockey1.y = 0;
     }
-    if (hockey1.y >= 370 - (hockey_left_height * 1.5)) {
-        hockey1.y = 370 - (hockey_left_height * 1.5);
+    if (hockey1.y >= gameboard_height - (hockey_left_height * 1.5)) {
+        hockey1.y = gameboard_height - (hockey_left_height * 1.5);
     }
     if (hockey2.y <= 0) {
         hockey2.y = 0;
     }
-    if (hockey2.y >= 370 - (hockey_right_height * 1.5)) {
-        hockey2.y = 370 - (hockey_right_height * 1.5);
+    if (hockey2.y >= gameboard_height - (hockey_right_height * 1.5)) {
+        hockey2.y = gameboard_height - (hockey_right_height * 1.5);
     }
 
     //Keyboard control /////////////////////////////
@@ -291,29 +292,29 @@ function updateGameArea() {
     if (myGameArea.keys && myGameArea.keys[87]) {
         hockey1.y -= 10;
         if (ball.crashWith(hockey1)) {
-            ball.speedY = -4;
-            ball.speedX = 14;
+            ball.speedY = -24;
+            ball.speedX = 24;
         }
     }
     if (myGameArea.keys && myGameArea.keys[83]) {
         hockey1.y += 10;
         if (ball.crashWith(hockey1)) {
             ball.speedY = 4;
-            ball.speedX = 14;
+            ball.speedX = 24;
         }
     }
     if (myGameArea.keys && myGameArea.keys[38]) {
         hockey2.y -= 10;
         if (ball.crashWith(hockey2)) {
             ball.speedY = -4;
-            ball.speedX = -8;
+            ball.speedX = -18;
         }
     }
     if (myGameArea.keys && myGameArea.keys[40]) {
         hockey2.y += 10;
         if (ball.crashWith(hockey2)) {
             ball.speedY = 4;
-            ball.speedX = -8;
+            ball.speedX = -18;
         }
     }
 
@@ -337,7 +338,7 @@ function updateGameArea() {
     if (ball.y <= 0) {
         ball.speedY = 4;
     }
-    if (ball.y >= 370 - (hockey_left_height * 1.5)) {
+    if (ball.y >= gameboard_height - (hockey_left_height * 1.5)) {
         ball.speedY = -4;
     }
     if (ball.x <= 2) {
@@ -346,8 +347,8 @@ function updateGameArea() {
         ball.speedX = 10;
         //myGameArea.stop();
     }
-    if (ball.x >= 670) {
-        ball.x = 600;
+    if (ball.x >= gameboard_width) {
+        ball.x = gameboard_width - (hockey_right_width);
         point1 += 1;
         ball.speedX = -10;
         //myGameArea.stop();
