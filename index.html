@@ -6,28 +6,27 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <title>Page Title</title>
    <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link rel="stylesheet" type="text/css" media="screen" href="css.css" />
+   <link rel="stylesheet" type="text/css" media="screen" href="animation.css" />
    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js"></script>
    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700" rel="stylesheet">
 
 </head>
 
 <body>
    <div id="scene">
-      <span class="sing" id="s1">T</span>
-      <span class="sing" id="s2">h</span>
-      <span class="sing" id="s3">e</span>
-      <span class="sing" id="s4">P</span>
-      <span class="sing" id="s5">i</span>
-      <span class="sing" id="s6">n</span>
-      <span class="sing" id="s7">g</span>
-      <span class="sing" id="s8">P</span>
-      <span class="sing" id="s9">o</span>
-      <span class="sing" id="s10">n</span>
-      <span class="sing" id="s11">g</span>
+      <span class="sing">T</span>
+      <span class="sing">h</span>
+      <span class="sing">e</span>
+      <span class="sing">P</span>
+      <span class="sing">i</span>
+      <span class="sing">n</span>
+      <span class="sing">g</span>
+      <span class="sing">P</span>
+      <span class="sing">o</span>
+      <span class="sing">n</span>
+      <span class="sing">g</span>
       <div id="boxet">
-         <button id="start" class="play"><a class="playlink" href="src/index.html">Play the</a></button>
+         <button id="startBtn" class="startBtn"><a class="startBtnLink" href="src/index.html">PLAY</a></button>
       </div>
       <div id="game">GAME</div>
 
@@ -95,21 +94,28 @@
                <circle id="middleSmall" class="start4" cx="503.8" cy="233.9" r="58.1" />
             </g>
       </svg>
-
+      <!-- CONTROLS -->
       <div id="btns">
+         <button class="btn" onclick="master.play('flyIn2')">flyIn2</button>
+         <button class="btn" onclick="master.play('flyIn3')">flyIn3</button>
+         <button class="btn" onclick="master.play('flyIn4')">flyIn4</button>
+         <button class="btn" onclick="master.play('flyIn5')">flyIn5</button>
+         <button class="btn" onclick="master.play('boxEnter-=2')">boxEnter</button>
+         <button class="btn" onclick="master.play('gameEnter')">gameEnter</button>
+         <button class="btn" onclick="master.play('buttonEnter')">buttonEnter</button><br>
+         <button class="btn" onclick="master.timeScale(4)">4x speed</button>
+         <button class="btn" onclick="master.timeScale(2)">2x speed</button>
+         <button class="btn" onclick="master.timeScale(1)">normal speed</button>
+         <button class="btn" onclick="master.timeScale(0.5)">0.5x speed</button>
+         <button class="btn" onclick="master.timeScale(0.1)">0.1x speed</button><br>
          <button class="btn" onclick="master.play()">start</button>
-         <button class="btn" onclick="start()">start scale</button>
          <button class="btn" onclick="master.pause()">pause</button>
-         <button class="btn" onclick="master.timeScale(1)">1</button>
-         <button class="btn" onclick="master.timeScale(0.5)">0.5</button>
-         <button class="btn" onclick="master.timeScale(0.1)">0.1</button>
          <button class="btn" onclick="master.restart()">restart</button>
-         <button id="replay">Replay</button>
       </div>
-
    </div>
 
-<script src="animation.js"></script>
+   <script src="helpers.js"></script>
+   <script src="animation.js"></script>
 </body>
 
 </html>

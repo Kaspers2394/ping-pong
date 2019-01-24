@@ -1,107 +1,25 @@
-// ViewWidth to pixels converter
-vwToPx = (vw) => {
-   var vw = Math.floor((document.getElementById('scene').offsetWidth / 100) * vw);
-   return vw;
-   console.log(vw);
-}
-// ViewHeight to pixels converter
-vhToPx = (vh) => {
-   var vh = Math.floor((document.getElementById('scene').offsetHeight / 100) * vh);
-   return vh;
-   console.log(vh);
-}
-// Random nummer between 2 values
-function random(min, max) {
-   return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-function tweenXYOpacity(target, timeMin, timeMax, xMin, xMax, yMin, yMax, delay, opacity) {
-   TweenMax.to(target, random(timeMin, timeMax), {
-      x: random(xMin, xMax),
-      y: random(yMin, yMax),
-      opacity: opacity,
-      ease: Power2.easeOut,
-      onComplete: tweenXYOpacity,
-      clearProps: 'all',
-      onCompleteParams: [target, timeMin, timeMax, xMin, xMax, yMin, yMax, delay, opacity]
-   });
-}
-
-function tweenScaleOpacity(target, timeMin, timeMax, xMin, xMax, yMin, yMax, scaleMin, scaleMax, delay,
-   opacity, origin) {
-   TweenMax.to(target, random(timeMin, timeMax), {
-      x: random(xMin, xMax),
-      y: random(yMin, yMax),
-      scaleY: random(scaleMin, scaleMax),
-      scaleX: random(scaleMin, scaleMax),
-      transformOrigin: origin,
-      opacity: opacity,
-      yoyo: true,
-      repeat: 1,
-      onComplete: tweenScaleOpacity,
-      clearProps: 'all',
-      onCompleteParams: [target, timeMin, timeMax, xMin, xMax, yMin, yMax, scaleMin, scaleMax, delay,
-         opacity, origin
-      ]
-   });
-}
-
-pause = () => {
-   const tl = new TimelineMax();
-
-   tl.add(TweenMax.to(master, .5, {
-      timeScale: 0,
-      ease: Linear.easeNone
-   }));
-   return tl;
-}
-start = () => {
-   const tl = new TimelineMax();
-
-   tl.add(TweenMax.to(master, .5, {
-      timeScale: 1,
-      ease: Linear.easeNone
-   }));
-   return tl;
-}
-//get text aligned right
-setText = () => {
-   const arr = []
-   var total = 0;
-   const tl = new TimelineMax();
-   var textArr = document.querySelectorAll('.sing');
-   var i = 0;
-   for (let text of textArr) {
-      let width = text.getBoundingClientRect().width;
-      tl.add(TweenMax.set(textArr[i], {
-         left: total,
-         y: vhToPx(-20),
-         scale: 0.5
-      }));
-      total = total + width;
-      i++;
-   }
-}
-
 setup = () => {
+   //get text right function call
    setText();
 
    const tl = new TimelineMax();
-
+//setup for rocket
    tl.set(document.getElementById('rocket'), {
       x: () => {
          var x = rocket.getBoundingClientRect().width * 2;
          return '-' + x
       },
       opacity: 1,
-      scale: 0.4
+      scale: 0.4,
    });
+   //setup for 'game' text
    tl.set(document.getElementById('game'), {
       opacity: 1,
       x: vwToPx(38),
       y: vhToPx(-34),
       opacity: 1
    });
+   //setup for the box
    tl.set(document.getElementById('boxet'), {
       opacity: 1,
       left: vwToPx(15),
@@ -112,14 +30,12 @@ setup = () => {
       transformOrigin: "bottom center",
       opacity: 0
    });
-   tl.set(document.getElementById('start'), {
+
+   tl.set(document.getElementById('startBtn'), {
       scale: 0,
       opacity: 1,
    });
-   // tl.set(document.getElementById('config'), {
-   //    scale: 0,
-   //    opacity: 1,
-   // });
+
    tl.set('.sing', {
       opacity: 0.4
    });
@@ -130,7 +46,7 @@ rocketAnimation = () => {
    const tl = new TimelineMax({
       repeat: -1
    });
-
+// data for flying out bubbles
    tweenXYOpacityData = [{
          id: 'bigLast',
          timeMin: 1.2,
@@ -198,7 +114,7 @@ rocketAnimation = () => {
          opacity: 0
       }
    ]
-
+   // data for the moving | scaling bubbles
    tweenScaleOpacityData = [{
          id: 'topLeft',
          timeMin: 1.5,
@@ -326,12 +242,13 @@ rocketAnimation = () => {
          origin: "center center"
       },
    ]
+   // for each call on flying out bubble' data
    tweenXYOpacityData.map(tween => {
       tl.call(tweenXYOpacity, [document.getElementById(tween.id), tween.timeMin, tween.timeMax, tween
          .xMin, tween.xMax, tween.yMin, tween.yMax, tween.delay, tween.opacity
       ]);
    });
-
+   // ffor each call for the moving | scaling bubble' data
    tweenScaleOpacityData.map(tween => {
       tl.call(tweenScaleOpacity, [document.getElementById(tween.id), tween.timeMin, tween.timeMax,
          tween.xMin, tween.xMax, tween.yMin, tween.yMax, tween.scaleMin, tween.scaleMax, tween.delay,
@@ -380,6 +297,10 @@ flyIn1 = () => {
          y: vhToPx(50)
       },
    ]
+   // scaling rocket
+   tl.to(rocket, 0.1, {
+      scale: .4
+   });
 
    tl.add(TweenMax.to(rocket, 4, {
       bezier: {
@@ -390,10 +311,7 @@ flyIn1 = () => {
       force3D: true,
       ease: Power0.easeNone,
       onComplete: () => {
-         TweenMax.to(rocket, 0.1, {
-            scale: .5
-         });
-         console.log('1done')
+         master.add("flyIn1Done")
       }
    }, ))
    return tl;
@@ -401,6 +319,7 @@ flyIn1 = () => {
 
 flyIn2 = () => {
    const tl = new TimelineMax();
+
    path2 = [
       //FLYIN 2
       {
@@ -413,6 +332,11 @@ flyIn2 = () => {
       },
    ]
 
+   // scaling rocket
+   tl.to(rocket, 0.1, {
+      scale: .5
+   });
+
    tl.add(TweenMax.to(rocket, 3, {
       bezier: {
          curviness: 1,
@@ -422,9 +346,6 @@ flyIn2 = () => {
       force3D: true,
       ease: Power0.easeNone,
       onComplete: () => {
-         TweenMax.to(rocket, 0.1, {
-            scale: .6
-         });
          master.add("flyIn2Done")
       }
    }, ));
@@ -433,6 +354,7 @@ flyIn2 = () => {
 
 flyIn3 = () => {
    const tl = new TimelineMax();
+
    path3 = [
       //FLYIN 3
       {
@@ -449,6 +371,11 @@ flyIn3 = () => {
       },
    ]
 
+   //scaling rocket
+   tl.to(rocket, 0.1, {
+      scale: .7
+   });
+
    tl.add(TweenMax.to(rocket, 3, {
       bezier: {
          curviness: 1,
@@ -458,9 +385,6 @@ flyIn3 = () => {
       force3D: true,
       ease: Power0.easeNone,
       onComplete: () => {
-         TweenMax.to(rocket, 0.1, {
-            scale: .7
-         });
          mater.add("flyIn3Done")
       }
    }, ));
@@ -469,7 +393,6 @@ flyIn3 = () => {
 
 flyIn4 = () => {
    const tl = new TimelineMax();
-
    path4 = [
       //FLYIN 4
       {
@@ -477,8 +400,8 @@ flyIn4 = () => {
          y: vhToPx(-20)
       },
       {
-         x: vwToPx(-50),
-         y: vhToPx(-75)
+         x: vwToPx(-30),
+         y: vhToPx(-120)
       },
    ]
 
@@ -491,9 +414,6 @@ flyIn4 = () => {
       force3D: true,
       ease: Power0.easeNone,
       onComplete: () => {
-         TweenMax.to(rocket, 0.1, {
-            scale: 1
-         });
          master.add("flyIn4Done")
       }
    }, ));
@@ -502,6 +422,7 @@ flyIn4 = () => {
 
 flyIn5 = () => {
    const tl = new TimelineMax();
+
    path5 = [
       //FLYIN 5
       {
@@ -514,9 +435,15 @@ flyIn5 = () => {
       },
       {
          x: vwToPx(25),
-         y: vhToPx(-15)
+         y: vhToPx(-20)
       },
    ]
+
+   //scaling rocket
+   tl.to(rocket, 0.8, {
+      scale: 1,
+      transformOrigin: "center center",
+   });
 
    tl.add(TweenMax.to(rocket, 3, {
       bezier: {
@@ -537,6 +464,7 @@ flyIn5 = () => {
 
 titleEnter1 = () => {
    const tl = new TimelineMax();
+
    path = [{
       x: vwToPx(85),
       y: vhToPx(-10)
@@ -547,6 +475,7 @@ titleEnter1 = () => {
       x: vwToPx(40),
       y: vhToPx(45)
    }]
+
    tl.staggerTo(".sing", 1, {
       bezier: {
          curviness: 1,
@@ -558,8 +487,10 @@ titleEnter1 = () => {
    }, 0.2);
    return tl;
 }
+
 titleEnter2 = () => {
    const tl = new TimelineMax();
+
    tl.staggerTo(".sing", 1, {
       delay: 0.5,
       transformOrigin: "50% 50% 100",
@@ -576,6 +507,7 @@ titleEnter2 = () => {
 
 titleEnter3 = () => {
    const tl = new TimelineMax();
+
    tl.staggerTo(".sing", .4, {
       delay: 0.1,
       textShadow: "0 2px 25px rgba(255, 255, 255, 0.479)",
@@ -586,6 +518,7 @@ titleEnter3 = () => {
 }
 boxEnter = () => {
    const tl = new TimelineMax();
+
    tl.to(document.getElementById('boxet'), 0.5, {
       scale: 1,
       opacity: 1
@@ -595,6 +528,7 @@ boxEnter = () => {
 }
 gameEnter = () => {
    const tl = new TimelineMax();
+
    tl.to(document.getElementById('game'), 1.3, {
       delay: 0.7,
       y: vhToPx(75),
@@ -603,10 +537,10 @@ gameEnter = () => {
 
    return tl;
 }
-buttonsEnter = () => {
+buttonEnter = () => {
    const tl = new TimelineMax();
 
-   tl.to(document.getElementById('start'), 0.8, {
+   tl.to(document.getElementById('startBtn'), 0.8, {
          scale: 1,
          ease: Elastic.easeOut.config(1, 0.3)
       })
@@ -622,14 +556,22 @@ buttonsEnter = () => {
 const master = new TimelineMax({});
 master.add(setup())
    .add(rocketAnimation(), 0)
+   .add('flyIn')
    .add(flyIn1(), 2)
+   .add('flyIn2')
    .add(flyIn2())
    .add(titleEnter1(), "flyIn2Done-=2")
+   .add('flyIn3')
    .add(flyIn3())
    .add(titleEnter2(), "flyIn3Done-=2.5")
+   .add('flyIn4')
    .add(flyIn4())
    .add(titleEnter3(), "flyIn4Done-=2.5")
+   .add('flyIn5')
    .add(flyIn5())
+   .add('boxEnter')
    .add(boxEnter(), "flyIn5Done-=2")
+   .add('gameEnter')
    .add(gameEnter())
-   .add(buttonsEnter(), "+=0.3")
+   .add('buttonEnter')
+   .add(buttonEnter(), "+=0.3")
