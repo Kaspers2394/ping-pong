@@ -49,34 +49,34 @@ a {
   font-size: calc(1.8vh + 0.4 * ( (100vw - 420px) / 480));
   font-weight: normal;
   margin: 1vh  0; }
-  @media screen and (max-width: 420px) {
-    a {
-      font-size: 1.8vh; } }
-  @media screen and (min-width: 900px) {
-    a {
-      font-size: 2.2vh; } }
+@media screen and (max-width: 420px) {
+  a {
+    font-size: 1.8vh; } }
+@media screen and (min-width: 900px) {
+  a {
+    font-size: 2.2vh; } }
 
 p {
   font-size: calc(1.8vh + 1 * ( (100vw - 420px) / 480));
   font-weight: normal;
   margin: 2vh  0; }
-  @media screen and (max-width: 420px) {
-    p {
-      font-size: 1.8vh; } }
-  @media screen and (min-width: 900px) {
-    p {
-      font-size: 2.8vh; } }
+@media screen and (max-width: 420px) {
+  p {
+    font-size: 1.8vh; } }
+@media screen and (min-width: 900px) {
+  p {
+    font-size: 2.8vh; } }
 
 h1 {
   font-size: calc(28px + 2 * ( (100vw - 420px) / 480));
   font-weight: 400;
   padding: 10px; }
-  @media screen and (max-width: 420px) {
-    h1 {
-      font-size: 28px; } }
-  @media screen and (min-width: 900px) {
-    h1 {
-      font-size: 30px; } }
+@media screen and (max-width: 420px) {
+  h1 {
+    font-size: 28px; } }
+@media screen and (min-width: 900px) {
+  h1 {
+    font-size: 30px; } }
 
 h2 a {
   text-decoration: none;
@@ -84,12 +84,12 @@ h2 a {
   font-weight: 500;
   margin: 4vh 0;
   color: #494948; }
-  @media screen and (max-width: 420px) {
-    h2 a {
-      font-size: 1.8vh; } }
-  @media screen and (min-width: 900px) {
-    h2 a {
-      font-size: 5vh; } }
+@media screen and (max-width: 420px) {
+  h2 a {
+    font-size: 1.8vh; } }
+@media screen and (min-width: 900px) {
+  h2 a {
+    font-size: 5vh; } }
 
 .index_header {
   display: inline-block;
@@ -100,14 +100,14 @@ h2 a {
   padding: 3vh 0;
   color: #494948;
   border-bottom: solid 4px #b59556; }
-  @media screen and (max-width: 420px) {
-    .index_header {
-      font-size: 1.8vh; } }
-  @media screen and (min-width: 900px) {
-    .index_header {
-      font-size: 5vh; } }
-  .index_header:nth-last-child(2) {
-    border: 0; }
+@media screen and (max-width: 420px) {
+  .index_header {
+    font-size: 1.8vh; } }
+@media screen and (min-width: 900px) {
+  .index_header {
+    font-size: 5vh; } }
+.index_header:nth-last-child(2) {
+  border: 0; }
 
 .index_header:first-child {
   margin-top: 3vh; }
@@ -116,24 +116,24 @@ h2 {
   font-size: calc(1.8vh + 1.2 * ( (100vw - 420px) / 480));
   font-weight: 600;
   padding: 10px; }
-  @media screen and (max-width: 420px) {
-    h2 {
-      font-size: 1.8vh; } }
-  @media screen and (min-width: 900px) {
-    h2 {
-      font-size: 3vh; } }
+@media screen and (max-width: 420px) {
+  h2 {
+    font-size: 1.8vh; } }
+@media screen and (min-width: 900px) {
+  h2 {
+    font-size: 3vh; } }
 
 h3 {
   font-size: calc(2vh + 0.5 * ( (100vw - 420px) / 480));
   font-weight: normal;
   padding: 10px 0;
   color: #494948; }
-  @media screen and (max-width: 420px) {
-    h3 {
-      font-size: 2vh; } }
-  @media screen and (min-width: 900px) {
-    h3 {
-      font-size: 2.5vh; } }
+@media screen and (max-width: 420px) {
+  h3 {
+    font-size: 2vh; } }
+@media screen and (min-width: 900px) {
+  h3 {
+    font-size: 2.5vh; } }
 
 * {
   font-family: sans-serif;
@@ -143,10 +143,10 @@ h3 {
 
 body {
   position: relative; }
-  body canvas {
-    margin-top: 0;
-    margin-left: 0;
-    outline: 1px solid white; }
+body canvas {
+  margin-top: 0;
+  margin-left: 0;
+  outline: 1px solid white; }
 
 .center {
   text-align: center; }
@@ -154,55 +154,55 @@ body {
 .flag {
   position: fixed;
   height: 50px; }
-  @media screen and (min-width: 600px) {
-    .flag {
-      left: 0;
-      top: 0;
-      display: block;
-      background-color: #fff;
-      z-index: 1000; } }
-  @media screen and (min-width: 1600px) {
-    .flag {
-      top: 1vh;
-      left: 0;
-      display: inline-block;
-      background-color: rgba(0, 0, 0, 0); } }
-  @media screen and (min-width: 600px) {
-    .flag li {
-      width: 50px;
-      display: inline-block; } }
-  @media screen and (min-width: 1600px) {
-    .flag li {
-      width: 50px;
-      display: inline-block; } }
+@media screen and (min-width: 600px) {
+  .flag {
+    left: 0;
+    top: 0;
+    display: block;
+    background-color: #fff;
+    z-index: 1000; } }
+@media screen and (min-width: 1600px) {
+  .flag {
+    top: 1vh;
+    left: 0;
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0); } }
+@media screen and (min-width: 600px) {
+  .flag li {
+    width: 50px;
+    display: inline-block; } }
+@media screen and (min-width: 1600px) {
+  .flag li {
+    width: 50px;
+    display: inline-block; } }
+.flag li img {
+  margin: 1vh; }
+@media screen and (min-width: 600px) {
   .flag li img {
-    margin: 1vh; }
-    @media screen and (min-width: 600px) {
-      .flag li img {
-        width: 50px; } }
-    @media screen and (min-width: 600px) and (orientation: landscape) {
-      .flag li img {
-        width: 30px; } }
-    @media screen and (min-width: 1100px) {
-      .flag li img {
-        width: 40px; } }
-    @media screen and (min-width: 1600px) {
-      .flag li img {
-        width: 40px; } }
-  .flag li a {
-    cursor: pointer; }
+    width: 50px; } }
+@media screen and (min-width: 600px) and (orientation: landscape) {
+  .flag li img {
+    width: 30px; } }
+@media screen and (min-width: 1100px) {
+  .flag li img {
+    width: 40px; } }
+@media screen and (min-width: 1600px) {
+  .flag li img {
+    width: 40px; } }
+.flag li a {
+  cursor: pointer; }
 
 #title {
   text-align: center; }
 
 #pricetitle {
   text-align: center; }
-  @media screen and (min-width: 600px) {
-    #pricetitle {
-      display: none; } }
-  @media screen and (min-width: 1600px) {
-    #pricetitle {
-      display: block; } }
+@media screen and (min-width: 600px) {
+  #pricetitle {
+    display: none; } }
+@media screen and (min-width: 1600px) {
+  #pricetitle {
+    display: block; } }
 
 footer {
   position: fixed;
@@ -212,19 +212,19 @@ footer {
   background-color: #fff;
   box-shadow: 0 -5px 7px -5px #494948;
   text-align: center; }
-  footer ul li {
-    display: inline-block;
-    list-style: none; }
-    footer ul li a {
-      padding: 2vh 4vh;
-      display: block;
-      font-size: 4vh;
-      cursor: pointer;
-      color: #494948; }
-      footer ul li a .active {
-        color: #b59556; }
-      footer ul li a i {
-        z-index: -10; }
+footer ul li {
+  display: inline-block;
+  list-style: none; }
+footer ul li a {
+  padding: 2vh 4vh;
+  display: block;
+  font-size: 4vh;
+  cursor: pointer;
+  color: #494948; }
+footer ul li a .active {
+  color: #b59556; }
+footer ul li a i {
+  z-index: -10; }
 
 #viewportsize {
   display: none;
@@ -239,12 +239,12 @@ footer {
   border-radius: 0 40px 40px 0;
   border: solid 5px #fff;
   font-size: calc(1.8vh + 1.2 * ( (100vw - 420px) / 480)); }
-  @media screen and (max-width: 420px) {
-    #viewportsize {
-      font-size: 1.8vh; } }
-  @media screen and (min-width: 900px) {
-    #viewportsize {
-      font-size: 3vh; } }
+@media screen and (max-width: 420px) {
+  #viewportsize {
+    font-size: 1.8vh; } }
+@media screen and (min-width: 900px) {
+  #viewportsize {
+    font-size: 3vh; } }
 
 @font-face {
   font-family: myFont;
@@ -256,19 +256,23 @@ footer {
 
 #gameboard {
   position: relative; }
-  #gameboard #scoreboard {
-    width: 100%;
-    background-color: #333;
-    display: grid;
-    grid-template-columns: repeat(3, calc((100%)/3)); }
-    #gameboard #scoreboard input[type="button"], #gameboard #scoreboard button {
-      padding: 5px;
-      width: 100%;
-      margin: 0 auto;
-      font-size: 40px;
-      border-radius: 10px; }
 
-#score1, #score2, input[type="text"] {
+#scoreboard {
+  width: 100%;
+  background-color: #333;
+  display: grid;
+  grid-template-columns: repeat(3, calc((100%)/3)); }
+#scoreboard input[type="button"],
+#scoreboard button {
+  padding: 5px;
+  width: 100%;
+  margin: 0 auto;
+  font-size: 40px;
+  border-radius: 10px; }
+
+#score1,
+#score2,
+input[type="text"] {
   font-family: myFont;
   font-size: 35px;
   padding: 20px 0;
@@ -276,7 +280,8 @@ footer {
   width: 100%;
   border: 0; }
 
-#score1, #score2 {
+#score1,
+#score2 {
   background: #525355;
   font-size: 45px;
   -webkit-touch-callout: none;
@@ -291,29 +296,153 @@ footer {
   /* Internet Explorer/Edge */
   user-select: none;
   /* Non-prefixed version, currently
-             supported by Chrome and Opera */ }
+  supported by Chrome and Opera */ }
 
 .figure_container {
   display: grid;
   grid-template-columns: repeat(2, calc((100%)/2));
   padding: 0;
   margin: 0; }
-  .figure_container img {
-    display: block;
-    cursor: pointer; }
+.figure_container img {
+  display: block;
+  cursor: pointer; }
 
 .icon_container {
   display: grid;
   grid-template-columns: repeat(4, calc((100%) / 4)); }
-  .icon_container img {
-    display: block;
-    cursor: pointer;
-    width: 100%; }
+.icon_container img {
+  display: block;
+  cursor: pointer;
+  width: 100%; }
 
 .faded {
   opacity: 0.2; }
 
 .unfaded {
   opacity: 1; }
+
+body {
+  min-height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background-image: url("space_bg.svg");
+  background-size: 100%;
+  font-family: 'Montserrat', sans-serif; }
+
+#scene {
+  width: 100vw;
+  height: 100vh; }
+
+#rocket {
+  opacity: 0;
+  position: absolute; }
+
+.sing {
+  opacity: .9;
+  position: absolute;
+  z-index: 2;
+  font-size: 6.5vw;
+  color: white;
+  opacity: 0; }
+
+#game {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  background-image: linear-gradient(to right, #6253e1, #852D91);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 7vw;
+  opacity: 0;
+  z-index: 5;
+  text-shadow: 0 2px 15px 0 #6f5fff; }
+
+#boxet {
+  background: rgba(0, 0, 0, 0.445);
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  opacity: 0;
+  border-radius: 2vw; }
+
+#btns {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0; }
+
+.btn {
+  background: rgba(0, 0, 0, 0.219);
+  color: rgba(255, 255, 255, 0.548);
+  outline: none;
+  border: none;
+  font-weight: 300;
+  font-size: 70%;
+  cursor: pointer; }
+
+.startBtn {
+  font-family: 'Montserrat', sans-serif;
+  display: inline-block;
+  font-size: 2.2vw;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  margin: 7vh 8vw;
+  padding: 2.5vh 6vw;
+  text-align: center;
+  border: none;
+  background-size: 300% 100%;
+  border-radius: 50vh;
+  moz-transition: background .4s ease-in-out;
+  -o-transition: background .4s ease-in-out;
+  -webkit-transition: background .4s ease-in-out;
+  transition: background .4s ease-in-out;
+  transform-origin: center center;
+  z-index: 10;
+  opacity: 0;
+  background-image: linear-gradient(to right, #6253e1, #852D91, #A3A1FF, #F24645);
+  box-shadow: 0 4px 15px 0 rgba(126, 52, 161, 0.637); }
+
+.startBtnLink {
+  color: white;
+  text-decoration: none; }
+
+.startBtn:hover {
+  background-position: 100% 0;
+  moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out; }
+
+.startBtn:focus {
+  outline: none; }
+
+.start0 {
+  fill: #3E4CA0; }
+
+.start1 {
+  fill: #EEF0F4; }
+
+.start2 {
+  fill: #C6CBDA; }
+
+.start3 {
+  fill: #B7C0E2; }
+
+.start4 {
+  fill: #DCE2F3; }
+
+.start5 {
+  fill: #B2B8CE; }
+
+.start6 {
+  fill: #E8EDF7; }
+
+.start7 {
+  fill: none;
+  stroke: #000000;
+  stroke-miterlimit: 10; }
 
 /*# sourceMappingURL=main.css.map */

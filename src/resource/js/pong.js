@@ -6,8 +6,8 @@ let point2 = 0;
 let board_height = window.innerHeight;
 let hockey_margin = 40;
 
-let gameboard_width = 1200 //window.innergameboard_width;
-let gameboard_height = gameboard_width * ((8/15)) //window.innerHeight;
+let gameboard_width = 1500; //window.innergameboard_width;
+let gameboard_height = gameboard_width * ((8/15)); //window.innerHeight;
 
 //define icon1 width
 let hockey_left_width = '';
@@ -40,7 +40,7 @@ balls = !localStorage.getItem("balls") ? "resource/img/Balls/SoccerBall.svg" : l
 //define background
 let background = '';
 // check if background image is present in local storage if not set a default value
-background = !localStorage.getItem("background") ? "resource/img/BG/soccerfield.svg" : localStorage.getItem("background");
+background = !localStorage.getItem("background") ? "resource/img/BG/space_bg.svg" : localStorage.getItem("background");
 
 
 //definer player1 icon
@@ -163,6 +163,8 @@ let myGameArea = {
         this.interval = setInterval(updateGameArea, 30);
 
         this.canvas.setAttribute("id", "board");
+
+
 
         //  let gamescore = document.getElementById("scoreboard");
         // this.canvas.appendChild(gamescore);
@@ -331,20 +333,20 @@ function updateGameArea() {
         ball.speedY = 0;
         ball.speedX = -13;
     } else {
-        ball.x += num;
+        ball.x += num
     }
 
 
     if (ball.y <= 0) {
-        ball.speedY = 4;
+        ball.speedY = 14;
     }
     if (ball.y >= gameboard_height - (hockey_left_height * 1.5)) {
-        ball.speedY = -4;
+        ball.speedY = -14;
     }
     if (ball.x <= 2) {
-        ball.x = 10;
+        ball.x = 14;
         point2 += 1;
-        ball.speedX = 10;
+        ball.speedX = 14;
         //myGameArea.stop();
     }
     if (ball.x >= gameboard_width) {

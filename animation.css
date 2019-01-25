@@ -3,7 +3,7 @@ body {
    overflow: hidden;
    margin: 0;
    padding: 0;
-   background-image: url("space_bg.svg");
+   background-image: url("src/space_bg.svg");
    background-size: 100%;
    font-family: 'Montserrat', sans-serif;
 }
